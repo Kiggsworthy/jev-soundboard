@@ -1,0 +1,43 @@
+[project]
+name = "jev-soundboard"
+version = "0.1.0"
+description = "A live AI soundboard, powered by Jev: it listens to your call and fires the perfect clip in about a second."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+keywords = ["soundboard", "discord", "facetime", "ai", "jev", "typesafe"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: MacOS",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Communications :: Chat",
+]
+dependencies = [
+    "numpy>=1.26",
+    "aiohttp>=3.9",
+    "websockets>=13",
+    "sounddevice>=0.5",
+]
+
+[project.optional-dependencies]
+discord = ["py-cord[voice]>=2.8"]
+clips = ["yt-dlp"]
+
+[project.scripts]
+jevboard = "jevboard.cli:main"
+jev-soundboard = "jevboard.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning:discord.*", "ignore::DeprecationWarning:asyncio.*"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jevboard"]

@@ -1,0 +1,31 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+jevboard.toml
+
+# Your clips (audio you supply; never committed)
+clips/*
+!clips/README.md
+!clips/index.example.json
+
+# Runtime state (panel token)
+state/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# Exported or recorded audio
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.flac
+
+.DS_Store

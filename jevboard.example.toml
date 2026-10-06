@@ -1,0 +1,33 @@
+# Copy to jevboard.toml (git-ignored) and edit. Environment variables (JEVBOARD_<NAME>) win over
+# this file. API keys never go here: they come from the environment or .env.
+
+# What Jev is listening to, and how it should behave.
+context = "a live FaceTime call between friends"
+vibe = "be a funny hype sidekick: punctuate jokes, roast fails and brags, celebrate wins and great ideas"
+trigger = "normal"            # chill | normal | trigger-happy
+
+# Transport: "local" (FaceTime, Discord desktop, Zoom... via audio devices) or "discord" (bot).
+transport = "local"
+
+# Audio devices (local transport). Names are matched by fragment; run `jevboard devices`.
+# See docs/AUDIO-SETUP.md for the FaceTime recipe.
+listen_device = "BlackHole 2ch"     # the call's audio comes in here
+output_device = "BlackHole 16ch"    # clips (and your mic) go out here; the call uses it as its mic
+mic_device = ""                     # your real mic, e.g. "MacBook Pro Microphone" (wear headphones!)
+monitor_device = ""                 # your headphones, so you hear the clips too
+
+# Timing.
+min_gap = 4.0           # seconds between automatic clips
+recent = 25             # recently played clips that can't repeat (capped at half the board)
+slice_seconds = 1.2     # transcription slice length
+window_seconds = 25.0   # how much conversation Jev sees
+silence_rms = 300.0     # quieter slices are skipped (and cost nothing)
+
+# Discord bot (docs/DISCORD.md).
+discord_command = "soundboard"   # /soundboard join, /soundboard vibe ...
+discord_listen = "local"         # local | native (experimental) | off
+discord_guild_ids = ""           # e.g. "123456789012345678" for instant slash-command updates
+
+# Control panel. Set panel_host = "0.0.0.0" to use it from your phone on the same Wi-Fi.
+panel_host = "127.0.0.1"
+panel_port = 8787

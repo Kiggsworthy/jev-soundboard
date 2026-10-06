@@ -1,0 +1,14 @@
+{
+  "bruh": {
+    "file": "bruh.mp3",
+    "desc": "Deflating 'bruh': a friend says something cringe, obvious or dumb, or brags about something tiny."
+  },
+  "applause": {
+    "file": "applause.mp3",
+    "desc": "A crowd applauding: someone finishes something, nails an idea, or wins an argument fair and square."
+  },
+  "dramatic_gasp": {
+    "file": "dramatic_gasp.mp3",
+    "desc": "A shocked gasp: a betrayal, a surprising confession, or a wild reveal."
+  }
+}
